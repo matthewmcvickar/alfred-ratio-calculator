@@ -2,10 +2,10 @@
 # encoding: utf-8
 
 require 'rubygems' unless defined? Gem
-require 'bundle/bundler/setup'
+require './bundle/bundler/setup'
 require 'alfred'
 
-require File.expand_path('./ratio-calculator.rb', __FILE__)
+require './calculate-ratio'
 
 # Grab query from Alfred.
 query = ARGV[0]
@@ -16,17 +16,19 @@ ratio_calculation = RatioCalculator.new(query)
 # Calculate the ratio.
 result = ratio_calculation.calculate_ratio
 
+puts result
+
 # Return the result
 Alfred.with_friendly_error do |alfred|
   feedback = alfred.feedback
 
   # add an arbitrary feedback
   feedback.add_item({
-    :uid      => ""                                                      ,
-    :title    => result                                                  ,
-    :subtitle => "Action this item to copy this number to the clipboard" ,
-    :arg      => "arg" ,
-    :valid    => "yes"                  ,
+    :uid      => "",
+    :title    => result,
+    :subtitle => "Action this item to copy this number to the clipboard",
+    :arg      => "arg",
+    :valid    => "yes",
   })
 
   puts feedback.to_xml(ARGV)

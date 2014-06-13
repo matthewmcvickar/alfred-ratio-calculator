@@ -3,6 +3,10 @@
 
 class RatioCalculator
 
+  def initialize(query)
+    @query = query
+  end
+
   # Round to the decimal specified in the argument.
   def round_to_specified_decimal(number)
     result = sprintf('%.2f', number)
