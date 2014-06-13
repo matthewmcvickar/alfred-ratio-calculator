@@ -1,9 +1,5 @@
 # encoding: utf-8
 
-require 'rubygems' unless defined? Gem
-require './bundle/bundler/setup'
-require 'alfred'
-
 require './calculate-ratio'
 
 # Grab incoming query.
@@ -15,20 +11,39 @@ ratio_calculation = RatioCalculator.new(query)
 # Calculate the ratio.
 result = ratio_calculation.ratio
 
-puts result
+# Handle result
+title        = 'Calculate the missing number in a ratio equation.'
+instructions = 'Enter three numbers and a non-number to represent an 𝒂/𝒃=𝒄/𝒅 equation, like so: 2 4 ? 10'
 
-# # Return the result
-# Alfred.with_friendly_error do |alfred|
-#   feedback = alfred.feedback
+# While it's receiving data and input hasn't been finished typing, the result may
+# be either a NaN (e.g., 'x 2') or an array of numbers (e.g., '2 4 3'). Until we
+# get a workable input, retain the on-screen instructions.
+if result == 'NaN' || result.kind_of?(Array)
+  valid    = 'no'
+  result   = title
+  subtitle = instructions
 
-#   # add an arbitrary feedback
-#   feedback.add_item({
-#     :uid      => "",
-#     :title    => result,
-#     :subtitle => "Action this item to copy this number to the clipboard",
-#     :arg      => "arg",
-#     :valid    => "yes",
-#   })
+# Some ratio equations may be valid but return a value of infinity (e.g., x 1 2 0).
+# In this case, lightly suggest altering the eqation.
+elsif result == 'Inf'
+  valid    = 'no'
+  result   = '∞'
+  subtitle = 'Is that right? ' + instructions
 
-#   puts feedback.to_xml(ARGV)
-# end
+# Otherwise, show them the answer!
+else
+  valid    = 'yes'
+  subtitle = 'Action this item to copy this number to the clipboard.'
+end
+
+# Return the result
+puts <<-eos
+  <?xml version='1.0'?>
+  <items>
+    <item valid='#{valid}' uid='#{result}' arg='#{result}'>
+        <title>#{result}</title>
+        <subtitle>#{subtitle}</subtitle>
+        <icon type="fileicon">/Applications/Calculator.app</icon>
+      </item>
+    </items>
+  eos

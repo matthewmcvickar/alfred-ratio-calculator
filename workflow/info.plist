@@ -36,15 +36,15 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>62</integer>
+				<integer>38</integer>
 				<key>keyword</key>
-				<string>ratio</string>
+				<string>rr</string>
 				<key>runningsubtext</key>
 				<string>Calculating…</string>
 				<key>script</key>
 				<string>/usr/bin/ruby ./main.rb {query}</string>
 				<key>subtext</key>
-				<string>Enter three numbers and a non-number to represent an a:b = c:d equation, like so: 2 4 ? 10</string>
+				<string>Enter three numbers and a non-number to represent an 𝒂/𝒃=𝒄/𝒅 equation, like so: 2 4 ? 10</string>
 				<key>title</key>
 				<string>Calculate the missing number in a ratio equation.</string>
 				<key>type</key>
