@@ -35,15 +35,11 @@ class RatioCalculator
   end
 
   def ratio_via(operation, x, y, z)
-    round_to_specified_decimal(x.to_f.send(operation, y.to_f / z.to_f))
-  end
-
-  def round_to_specified_decimal(number)
-    round(number).chomp('.00')
+    round(x.to_f.send(operation, y.to_f / z.to_f))
   end
 
   def round(number)
-    sprintf('%.2f', number)
+    sprintf('%.2f', number).chomp('.00')
   end
 
   def a
