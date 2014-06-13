@@ -32,7 +32,7 @@ Given **2/4=?/10**, type **rr 2 4 x 10** and get **5**!
 
 4. The result will show up in the feedback list below as you finish your equation. Hit <kbd>Return</kbd> to copy the result to your clipboard.
 
-===
+---
 
 ## Thanks
 
