@@ -1,31 +1,29 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-class RatioCalculator < ::Alfred::Handler::Base
+class RatioCalculator
 
   def initialize(query)
-    super
-
     @query = query
   end
 
   # Round to the decimal specified in the argument.
+  # Remove trailing zero and decimal if it's just an integer.
   def round_to_specified_decimal(number)
-    result = sprintf('%.2f', number)
-
-    # Remove trailing zero and decimal if it's just an integer.
-    return result.chomp('.00')
+    sprintf('%.2f', number).chomp('.00')
   end
 
   # Calculate value of missing number.
   def calculate_ratio_via_multiplication(x, y, z)
-    result = x.to_f*(y.to_f/z.to_f)
-    return round_to_specified_decimal(result)
+    calculate_ratio_via(:*, x, y, z)
   end
 
   def calculate_ratio_via_division(x, y, z)
-    result = x.to_f/(y.to_f/z.to_f)
-    return round_to_specified_decimal(result)
+    calculate_ratio_via(:/, x, y, z)
+  end
+
+  def calculate_ratio_via(operation, x, y, z)
+    round_to_specified_decimal(x.to_f.send(operation, y.to_f / z.to_f))
   end
 
   # Find which of the four numbers is missing and do the right calculation.
@@ -41,13 +39,13 @@ class RatioCalculator < ::Alfred::Handler::Base
 
         # Perform the appropriate calculation.
         if index == 0
-          result = calculate_ratio_via_multiplication(b, c, d)
+          calculate_ratio_via_multiplication(b, c, d)
         elsif index == 1
-          result = calculate_ratio_via_division(a, c, d)
+          calculate_ratio_via_division(a, c, d)
         elsif index == 2
-          result = calculate_ratio_via_multiplication(d, a, b)
+          calculate_ratio_via_multiplication(d, a, b)
         elsif index == 3
-          result = calculate_ratio_via_division(c, a, b)
+          calculate_ratio_via_division(c, a, b)
         end
 
       end
@@ -56,7 +54,7 @@ class RatioCalculator < ::Alfred::Handler::Base
 
   # Do calculation
   def calculate_ratio
-    return determine_correct_ratio_calculation(@query)
+    determine_correct_ratio_calculation(@query)
   end
 
 end

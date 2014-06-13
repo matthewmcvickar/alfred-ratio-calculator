@@ -16,7 +16,7 @@ ratio_calculation = RatioCalculator.new(query)
 # Calculate the ratio.
 result = ratio_calculation.calculate_ratio
 
-# puts result
+puts result
 
 # Return the result
 Alfred.with_friendly_error do |alfred|
