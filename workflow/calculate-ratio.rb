@@ -7,7 +7,7 @@ class RatioCalculator
 
   def ratio
     @query.each_with_index do |number, index|
-      ratio_for_index(index) unless placeholder?(number)
+      return(ratio_for_index(index)) if placeholder?(number)
     end
   end
   
