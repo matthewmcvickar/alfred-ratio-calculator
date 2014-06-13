@@ -1,60 +1,66 @@
-#!/usr/bin/env ruby
 # encoding: utf-8
 
 class RatioCalculator
-
   def initialize(query)
     @query = query
+  end
+
+  def ratio
+    @query.each_with_index do |number, index|
+      return(ratio_for_index(index)) if placeholder?(number)
+    end
+  end
+  
+  protected
+
+  def placeholder?(number)
+    /[0-9]+/.match(number.to_s)
+  end
+  
+  def ratio_for_index(index)
+    case index
+      when 0 then calculate_ratio_via_multiplication(b, c, d)
+      when 1 then calculate_ratio_via_division(a, c, d)
+      when 2 then calculate_ratio_via_multiplication(d, a, b)
+      when 3 then calculate_ratio_via_division(c, a, b)
+    end
+  end
+
+  def ratio_via_multiplication(x, y, z)
+    ratio_via(:*, x, y, z)
+  end
+
+  def ratio_via_division(x, y, z)
+    ratio_via(:/, x, y, z)
+  end
+
+  def ratio_via(operation, x, y, z)
+    round_to_specified_decimal(x.to_f.send(operation, y.to_f / z.to_f))
   end
 
   # Round to the decimal specified in the argument.
   # Remove trailing zero and decimal if it's just an integer.
   def round_to_specified_decimal(number)
-    sprintf('%.2f', number).chomp('.00')
+    round(number).chomp('.00')
+  end
+  
+  def round(number)
+    sprintf('%.2f', number)
   end
 
-  # Calculate value of missing number.
-  def calculate_ratio_via_multiplication(x, y, z)
-    calculate_ratio_via(:*, x, y, z)
+  def a
+    @query[0]
   end
-
-  def calculate_ratio_via_division(x, y, z)
-    calculate_ratio_via(:/, x, y, z)
+  
+  def b
+    @query[1]
   end
-
-  def calculate_ratio_via(operation, x, y, z)
-    round_to_specified_decimal(x.to_f.send(operation, y.to_f / z.to_f))
+  
+  def c
+    @query[2]
   end
-
-  # Find which of the four numbers is missing and do the right calculation.
-  def determine_correct_ratio_calculation(numbers)
-
-    # Extract numbers from arguments remaining after the options specified above.
-    a, b, c, d = numbers
-
-    numbers.each_with_index do |number, index|
-
-      # Check for which part of the series isn't a number.
-      if not (/[0-9]+/).match(number.to_s)
-
-        # Perform the appropriate calculation.
-        if index == 0
-          calculate_ratio_via_multiplication(b, c, d)
-        elsif index == 1
-          calculate_ratio_via_division(a, c, d)
-        elsif index == 2
-          calculate_ratio_via_multiplication(d, a, b)
-        elsif index == 3
-          calculate_ratio_via_division(c, a, b)
-        end
-
-      end
-    end
+  
+  def d
+    @query[3]
   end
-
-  # Do calculation
-  def calculate_ratio
-    determine_correct_ratio_calculation(@query)
-  end
-
 end
