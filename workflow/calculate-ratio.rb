@@ -10,13 +10,13 @@ class RatioCalculator
       return(ratio_for_index(index)) if placeholder?(number)
     end
   end
-  
+
   protected
 
   def placeholder?(number)
     /[0-9]+/.match(number.to_s)
   end
-  
+
   def ratio_for_index(index)
     case index
       when 0 then calculate_ratio_via_multiplication(b, c, d)
@@ -38,12 +38,10 @@ class RatioCalculator
     round_to_specified_decimal(x.to_f.send(operation, y.to_f / z.to_f))
   end
 
-  # Round to the decimal specified in the argument.
-  # Remove trailing zero and decimal if it's just an integer.
   def round_to_specified_decimal(number)
     round(number).chomp('.00')
   end
-  
+
   def round(number)
     sprintf('%.2f', number)
   end
@@ -51,15 +49,15 @@ class RatioCalculator
   def a
     @query[0]
   end
-  
+
   def b
     @query[1]
   end
-  
+
   def c
     @query[2]
   end
-  
+
   def d
     @query[3]
   end
