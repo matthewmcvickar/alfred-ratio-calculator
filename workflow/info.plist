@@ -44,7 +44,7 @@
 				<key>script</key>
 				<string>/usr/bin/ruby ./main.rb {query}</string>
 				<key>subtext</key>
-				<string>Enter three numbers and a non-number to represent an 𝒂/𝒃=𝒄/𝒅 equation, like so: 2 4 ? 10</string>
+				<string>Enter three numbers and a non-number to represent an 𝒂/𝒃=𝒄/𝒅 equation. E.g.: 2 4 ? 10</string>
 				<key>title</key>
 				<string>Calculate the missing number in a ratio equation.</string>
 				<key>type</key>

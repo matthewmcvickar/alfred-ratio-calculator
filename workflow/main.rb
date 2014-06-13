@@ -13,7 +13,7 @@ result = ratio_calculation.ratio
 
 # Handle result
 title        = 'Calculate the missing number in a ratio equation.'
-instructions = 'Enter three numbers and a non-number to represent an 𝒂/𝒃=𝒄/𝒅 equation, like so: 2 4 ? 10'
+instructions = 'Enter three numbers and a non-number to represent an 𝒂/𝒃=𝒄/𝒅 equation. E.g.: 2 4 ? 10'
 
 # While it's receiving data and input hasn't been finished typing, the result may
 # be either a NaN (e.g., 'x 2') or an array of numbers (e.g., '2 4 3'). Until we
