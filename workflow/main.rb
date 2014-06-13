@@ -11,13 +11,13 @@ ratio_calculation = RatioCalculator.new(query)
 # Calculate the ratio.
 result = ratio_calculation.ratio
 
-# Handle result
+# Handle result.
 title        = 'Calculate the missing number in a ratio equation.'
 instructions = 'Enter three numbers and a non-number to represent an 𝒂/𝒃=𝒄/𝒅 equation. E.g.: 2 4 ? 10'
 
-# While it's receiving data and input hasn't been finished typing, the result may
+# While it's receiving data and the user hasn't finished typing, the result may
 # be either a NaN (e.g., 'x 2') or an array of numbers (e.g., '2 4 3'). Until we
-# get a workable input, retain the on-screen instructions.
+# get calculable input, retain the on-screen instructions.
 if result == 'NaN' || result.kind_of?(Array)
   valid    = 'no'
   result   = title
