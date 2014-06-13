@@ -2,6 +2,8 @@
 
 Easily calculate the missing number in a ratio.
 
+Given 2/4 = ?/10, type **2 4 x 10** and get **5**!
+
 ## Installation
 
 1. **[Download the workflow.](https://github.com/matthewmcvickar/alfred-ratio-calculator/raw/master/Ratio%20Calculator.alfredworkflow)**
