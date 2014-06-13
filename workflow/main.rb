@@ -13,7 +13,7 @@ query = ARGV
 ratio_calculation = RatioCalculator.new(query)
 
 # Calculate the ratio.
-result = ratio_calculation.calculate_ratio
+result = ratio_calculation.ratio
 
 puts result
 

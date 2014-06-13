@@ -19,10 +19,10 @@ class RatioCalculator
 
   def ratio_for_index(index)
     case index
-      when 0 then calculate_ratio_via_multiplication(b, c, d)
-      when 1 then calculate_ratio_via_division(a, c, d)
-      when 2 then calculate_ratio_via_multiplication(d, a, b)
-      when 3 then calculate_ratio_via_division(c, a, b)
+      when 0 then ratio_via_multiplication(b, c, d)
+      when 1 then ratio_via_division(a, c, d)
+      when 2 then ratio_via_multiplication(d, a, b)
+      when 3 then ratio_via_division(c, a, b)
     end
   end
 
