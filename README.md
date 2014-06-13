@@ -2,9 +2,7 @@
 
 Easily calculate the missing number in a ratio. Given the equation **2/4=?/10**, type **rr 2 4 x 10** and get **5**!
 
-<center>
-  <img src="art/example.gif" width="640">
-</center>
+<img src="art/example.gif" width="640">
 
 ## Installation
 
