@@ -17,18 +17,18 @@ result = ratio_calculation.ratio
 
 puts result
 
-# Return the result
-Alfred.with_friendly_error do |alfred|
-  feedback = alfred.feedback
+# # Return the result
+# Alfred.with_friendly_error do |alfred|
+#   feedback = alfred.feedback
 
-  # add an arbitrary feedback
-  feedback.add_item({
-    :uid      => "",
-    :title    => result,
-    :subtitle => "Action this item to copy this number to the clipboard",
-    :arg      => "arg",
-    :valid    => "yes",
-  })
+#   # add an arbitrary feedback
+#   feedback.add_item({
+#     :uid      => "",
+#     :title    => result,
+#     :subtitle => "Action this item to copy this number to the clipboard",
+#     :arg      => "arg",
+#     :valid    => "yes",
+#   })
 
-  puts feedback.to_xml(ARGV)
-end
+#   puts feedback.to_xml(ARGV)
+# end
