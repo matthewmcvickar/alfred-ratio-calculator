@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 # encoding: utf-8
 
-class RatioCalculator
+class RatioCalculator < ::Alfred::Handler::Base
 
   def initialize(query)
+    super
+
     @query = query
   end
 

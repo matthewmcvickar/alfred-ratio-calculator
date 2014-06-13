@@ -7,8 +7,8 @@ require 'alfred'
 
 require './calculate-ratio'
 
-# Grab query from Alfred.
-query = ARGV[0]
+# Grab incoming query.
+query = ARGV
 
 # Make a new RatioCalculator object.
 ratio_calculation = RatioCalculator.new(query)
@@ -16,7 +16,7 @@ ratio_calculation = RatioCalculator.new(query)
 # Calculate the ratio.
 result = ratio_calculation.calculate_ratio
 
-puts result
+# puts result
 
 # Return the result
 Alfred.with_friendly_error do |alfred|
