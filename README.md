@@ -8,7 +8,7 @@ Given **2/4=?/10**, type **rr 2 4 x 10** and get **5**!
 
 1. **[Download the workflow.](https://github.com/matthewmcvickar/alfred-ratio-calculator/raw/master/Ratio%20Calculator.alfredworkflow)**
 
-2. Double-click on the **Ratio Calculator.alfredworkflow** file you just downloaded to add it to Alfred. (Optionally, categorize the workflow under 'Tools' in the the 'Category' dropdown.)
+2. Double-click on the **Ratio Calculator.alfredworkflow** file you just downloaded to add it to Alfred.
 
 3. Click the **Import** button.
 
