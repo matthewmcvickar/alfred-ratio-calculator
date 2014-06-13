@@ -34,6 +34,10 @@ Easily calculate the missing number in a ratio. Given the equation **2/4=?/10**,
 
 ===
 
+## See Also
+
+This Alfred workflow is based on my [ratio calculator script](https://github.com/matthewmcvickar/ratio-calculator) for the command line, which functions identically but includes several options.
+
 ## Thanks
 
 Many thanks to [Cody Robbins](http://github.com/codyrobbins) for code review, refactoring, and other helpful contributions.
