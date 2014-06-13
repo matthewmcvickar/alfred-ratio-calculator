@@ -2,7 +2,7 @@
 
 Easily calculate the missing number in a ratio.
 
-Given `2/4 = ?/10`, type **`rr 2 4 x 10`** and get **5**!
+Given **2/4=?/10**, type **rr 2 4 x 10** and get **5**!
 
 ## Installation
 
