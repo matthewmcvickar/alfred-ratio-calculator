@@ -43,7 +43,6 @@ puts <<-eos
     <item valid='#{valid}' uid='#{result}' arg='#{result}'>
         <title>#{result}</title>
         <subtitle>#{subtitle}</subtitle>
-        <icon type="fileicon">/Applications/Calculator.app</icon>
       </item>
     </items>
   eos
