@@ -24,22 +24,20 @@ Easily calculate the missing number in a ratio. Given the equation **2/4=?/10**,
 
 3. Type a ratio equation as a series of three numbers and one non-number to indicate the missing value.
 
-  For example, to find the missing number in the equation 2/4=x/10, type:
+    For example, to find the missing number in the equation 2/4=x/10, type:
 
-  ```
-  2 4 x 10
-  ```
+    ```
+    2 4 x 10
+    ```
 
-  You can use `x`, `?`, or any non-number character to indicate the number you want to find.
+    You can use `x`, `?`, or any non-number character to indicate the number you want to find.
 
 4. The result will show up in the feedback list below as you finish your equation. Hit <kbd>Return</kbd> to copy the result to your clipboard.
 
-===
+---
 
 ## See Also
 
 This Alfred workflow is based on my [ratio calculator script](https://github.com/matthewmcvickar/ratio-calculator) for the command line, which functions identically but includes several options.
 
-## Thanks
-
-Many thanks to [Cody Robbins](http://github.com/codyrobbins) for code review, refactoring, and other helpful contributions.
+This tool is heavily inspired by [Andrew Hedges Aspect Ratio Calculator](http://andrew.hedges.name/experiments/aspect_ratio/).
