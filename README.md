@@ -14,7 +14,7 @@ Easily calculate the missing number in a ratio. Given the equation **2/4=?/10**,
 
 3. Click the **Import** button.
 
-4. The default trigger keyword is `rr`. Change this as you see fit. To do so, double-click the leftmost of the two blocks that represent the workflow--that is, the one that says 'Script Filter'--and change the 'Keyword' field to your preferred trigger.
+4. The default trigger keyword is `rr`. Change this as you see fit. To do so, double-click the leftmost of the two blocks that represent the workflow—that is, the one that says 'Script Filter'—and change the 'Keyword' field to your preferred trigger.
 
 ## Usage
 
@@ -40,4 +40,4 @@ Easily calculate the missing number in a ratio. Given the equation **2/4=?/10**,
 
 This Alfred workflow is based on my [ratio calculator script](https://github.com/matthewmcvickar/ratio-calculator) for the command line, which functions identically but includes several options.
 
-This tool is heavily inspired by [Andrew Hedges Aspect Ratio Calculator](http://andrew.hedges.name/experiments/aspect_ratio/).
+This tool is heavily inspired by [Andrew Hedges’ Aspect Ratio Calculator](http://andrew.hedges.name/experiments/aspect_ratio/).
